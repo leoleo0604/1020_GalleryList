@@ -298,7 +298,52 @@ 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
 
 
 
+------------------------------
+[헤더 고정 작업]
+position: fixed;
+position: sticky;
 
+                   공통점
+fixed           3차원에 적용됨
+sticky          기준 화면이 Viewport (body요소 아님, 브라우저도 아님)
+                                  뷰포트
+                  z-index 적용됨
+                  스크롤링에 따라서 화면의 특정 위치에 고정되어서
+                  동일한 위치에서 스크롤을 따라다님
+
+                  body요소의 자식요소로 사용되면 스크롤링에 따른
+                  fixed, sticky는 정상적으로 구현됨
+                  단, body요소가 아닌 특정 요소(div, p, main..)의
+                  하위요소로 사용되어 스크롤링을 할 때 적용되지 않는
+                 경우가 있음. => 부모요소의 박스모델에서 콘텐츠 영역으
+                                     높이가 이동가능한 여유공간이 없다면
+                                     fixed, sticky는 적용안됨
+
+
+차이점                   fixed                        sticky
+
+2차원공간              소멸됨                      유지함            
+                       
+                         left, top,                     left, top     
+                         right, bottom               right, top
+                         없어도 기능 적용됨         left, bottom
+                                                         right, bottom 
+                                                        가로위치와 세로위치를
+                                                        지정하는 조합이 있어야만
+                                                        기능적용됨
+
+
+-----------------------------------------------------------------
+
+[Git과 Github를 사용한 형상관리]
+1. Git 프로그램을 삭제/설치
+
+2. Github 인증 관련 설정(=토큰 발급받기) => 저장공간 생성
+   참고. Git을 사용하여 프로그램을 저장하는
+          저장전용 웹사이트(=홈페이지)
+
+3. VSCode를 사용하여 Git을 사용하여
+  Github에 저장
  
 
 
